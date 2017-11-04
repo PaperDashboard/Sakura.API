@@ -6,6 +6,7 @@ authors = ["Indexyz <jiduye@gmail.com>"]
 [dependencies]
 rocket = "0.3.3"
 rocket_codegen = "0.3.3"
+rocket_contrib = "0.3.3"
 bson = "0.10.0"
 mongodb = "0.3.7"
 config = "0.7"

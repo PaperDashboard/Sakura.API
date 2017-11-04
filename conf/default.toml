@@ -1,5 +1,7 @@
 [database]
-url = "mongodb://lcoalhost/sakura"
+host = "192.168.60.128"
+port = 27017
+db = "sakura"
 
 [security]
 key = "ChangeMe"

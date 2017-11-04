@@ -3,7 +3,9 @@ use std::env;
 
 #[derive(Debug, Deserialize)]
 pub struct Database {
-    pub url: String,
+    pub host: String,
+    pub port: u16,
+    pub db: String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -25,9 +27,6 @@ impl Settings {
         
         let env = env::var("ENV").unwrap_or("development".into());
         s.merge(File::with_name(&format!("config/{}", env)).required(false))?;
-
-        s.set("database.url", "mongodb://localhost/sakura")?;
-        s.set("security.key", "ChangeMe")?;
 
         s.try_into()
     }
