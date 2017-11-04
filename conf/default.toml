@@ -1,0 +1,5 @@
+[database]
+url = "mongodb://lcoalhost/sakura"
+
+[security]
+key = "ChangeMe"

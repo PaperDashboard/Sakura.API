@@ -1,0 +1,13 @@
+[package]
+name = "sakura_api"
+version = "0.0.1"
+authors = ["Indexyz <jiduye@gmail.com>"]
+
+[dependencies]
+rocket = "0.3.3"
+rocket_codegen = "0.3.3"
+bson = "0.10.0"
+mongodb = "0.3.7"
+config = "0.7"
+serde_derive = "^1.0.8"
+serde = "^1.0.8"
