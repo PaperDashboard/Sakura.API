@@ -1,7 +1,5 @@
-use bson::Bson;
 use bson::Document;
 use database::connect::get_database;
-use mongodb::error::Error;
 use mongodb::db::ThreadedDatabase;
 use utils::result::un_warp_result;
 
@@ -9,10 +7,10 @@ use utils::result::un_warp_result;
 pub struct User;
 
 impl User {
-    const collection: &'static str = "users";
+    const COLLECTION: &'static str = "users";
 
     pub fn get_all_user() -> Vec<Document> {
-        let db = get_database().collection(User::collection);
+        let db = get_database().collection(User::COLLECTION);
         un_warp_result(
             un_warp_result(
                 db.find(None, None)

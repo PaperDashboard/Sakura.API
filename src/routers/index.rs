@@ -1,6 +1,6 @@
 use graud;
 
 #[get("/")]
-pub fn index(k: graud::key::KeyVerify) -> &'static str {
+pub fn index(_k: graud::key::KeyVerify) -> &'static str {
     "Hello, World"
 }

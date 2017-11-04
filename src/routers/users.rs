@@ -1,10 +1,10 @@
 use graud;
 use database::service::user;
-use rocket_contrib::{Json, Value};
+use rocket_contrib::{Json};
 use bson::Document;
 
 #[get("/users")]
-pub fn all_user(k: graud::key::KeyVerify) -> Json<Vec<Document>> {
+pub fn all_user(_k: graud::key::KeyVerify) -> Json<Vec<Document>> {
     let remove_keys = vec![
         "password", 
         "email", 
