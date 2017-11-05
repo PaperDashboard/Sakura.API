@@ -2,6 +2,7 @@
 #![plugin(rocket_codegen)]
 
 extern crate rocket;
+#[macro_use]
 extern crate rocket_contrib;
 extern crate config;
 extern crate serde;
@@ -9,6 +10,7 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
+#[macro_use(bson, doc)]
 extern crate bson;
 extern crate mongodb;
 
@@ -28,10 +30,13 @@ fn main() {
     }
     
     rocket::ignite()
-        // .attach(fairing::key::KeyVerify::default())
         .mount("/", routes![
             routers::index::index,
+            routers::ping::ping,
             routers::users::all_user,
+        ])
+        .mount("/user", routes![
+            routers::users::add_traffic,
         ])
         .launch();
 }
